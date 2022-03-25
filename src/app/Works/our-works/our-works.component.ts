@@ -36,7 +36,7 @@ export class OurWorksComponent implements OnInit {
     this.musicVideos = staticdata.ourwork.contents.musicVideos;
     this.audioStory = staticdata.ourwork.contents.audioStory;
     this.trailers = staticdata.ourwork.contents.trailer;
-    this.upcomings = staticdata.ourwork.contents.upcoming;
+//     this.upcomings = staticdata.ourwork.contents.upcoming;
 
     try {
       await this.getOurWorkText();
@@ -113,7 +113,7 @@ export class OurWorksComponent implements OnInit {
           this.musicVideos = this.filerContents('music_video',res).length > 0 ? this.filerContents('music_video',res) : staticdata.ourwork.contents.musicVideos;
           this.audioStory = this.filerContents('audio_story',res).length > 0 ? this.filerContents('audio_story',res) : staticdata.ourwork.contents.audioStory;
           this.trailers = this.filerContents('trailer',res).length > 0 ? this.filerContents('trailer',res) : staticdata.ourwork.contents.trailer;
-          this.upcomings = this.filerUpcomingContents(res).length > 0 ? this.filerUpcomingContents(res) : staticdata.ourwork.contents.upcoming;
+          this.upcomings = this.filerUpcomingContents(res).length > 0 ? this.filerUpcomingContents(res) : [];
           console.log(this.upcomings);
         }
         resolve('ok');
